@@ -1,38 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Mi Mapa Histórico</title>
-    <style>
-        #map {
-            width: 100%;
-            height: 100vh;
-        }
-    </style>
-
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <title>Mi mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-
 <body>
-    <h2 style="text-align:center;">Mapa Histórico</h2>
-    <div id="map"></div>
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script>
-        // Crear mapa centrado (cambia por tu región)
-        var map = L.map('map').setView([17.05, -96.72], 10);
+        // AQUÍ ESTÁ TU MAPA
+        var map = L.map('map').setView([17.05, -96.72], 13);
 
-        // Capa base
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
         }).addTo(map);
 
-        // EJEMPLO: marcador
-        L.marker([17.05, -96.72])
-            .addTo(map)
-            .bindPopup("Ejemplo de punto en Oaxaca");
+        // 👉 EL CÓDIGO QUE TIENES QUE PEGAR VA JUSTO AQUÍ
+
     </script>
 </body>
 </html>
