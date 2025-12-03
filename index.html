@@ -17,7 +17,32 @@
             maxZoom: 19
         }).addTo(map);
 
-        // 👉 EL CÓDIGO QUE TIENES QUE PEGAR VA JUSTO AQUÍ
+        <script>
+
+var map = L.map('map').setView([17.05, -96.72], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+}).addTo(map);
+
+
+// ⭐⭐ PEGA ESTO AQUÍ ⭐⭐
+var historico = L.tileLayer('./Historico_tiles/{z}/{x}/{y}.png', {
+    minZoom: 12,
+    maxZoom: 17,
+    opacity: 0.7,
+    attribution: 'Mapa histórico'
+});
+
+var baseMaps = {};
+var overlayMaps = {
+    "Mapa histórico": historico
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+</script>
+
 
     </script>
 </body>
